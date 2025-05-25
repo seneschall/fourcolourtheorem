@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://btuy4gx7uma74"]
+
+[ext_resource type="Script" uid="uid://bt3lrrmrotsww" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://b1n77v7bb5yq6" path="res://vertex.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://tovp6slg4pvf" path="res://path_2d.gd" id="3_1bvp3"]
+
+[sub_resource type="Curve2D" id="Curve2D_0xm2m"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 762, 520, 0, 0, 0, 0, 915, 519)
+}
+point_count = 2
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_0xm2m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.552956, 0.552956, 0.552956, 1)
+
+[node name="Vertex" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(933, 518)
+
+[node name="Vertex2" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(742, 516)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_0xm2m")
+script = ExtResource("3_1bvp3")
