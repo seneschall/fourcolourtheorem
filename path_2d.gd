@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	queue_redraw()
 
 func _draw() -> void:
 	draw_line(Vector2.ZERO, Vector2(100, 300), Color.AQUAMARINE, 10.0, true)

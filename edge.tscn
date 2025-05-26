@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://qnt1vv4rnynq"]
+
+[ext_resource type="Script" uid="uid://tovp6slg4pvf" path="res://path_2d.gd" id="1_fxce1"]
+
+[sub_resource type="Curve2D" id="Curve2D_0xm2m"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 762, 520, 0, 0, 0, 0, 915, 519)
+}
+point_count = 2
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_0xm2m")
+script = ExtResource("1_fxce1")
