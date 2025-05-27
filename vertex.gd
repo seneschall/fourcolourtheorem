@@ -1,15 +1,19 @@
+class_name Vertex
 extends AnimatableBody2D
 
 signal position_changed
 
 var dragging := false
 var of := Vector2.ZERO
+var color: Color
 const colors := [Color.RED, Color.BLUE, Color.GREEN, Color.BROWN]
+
 
 func _process(delta: float) -> void:
 	if dragging:
 		position = get_global_mouse_position() - of
 		position_changed.emit()
+
 
 func _on_button_button_down() -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
