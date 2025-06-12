@@ -10,3 +10,4 @@ script = ExtResource("1_41hjn")
 script = ExtResource("2_2637j")
 
 [node name="Vertices" type="Node2D" parent="."]
+script = ExtResource("2_2637j")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://btuy4gx7uma74"]
+[gd_scene load_steps=7 format=3 uid="uid://btuy4gx7uma74"]
 
 [ext_resource type="Script" uid="uid://bt3lrrmrotsww" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://b1n77v7bb5yq6" path="res://vertex.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://thqd8kcf7jfu" path="res://edge.gd" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://qnt1vv4rnynq" path="res://edge.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dhlyds6jarev1" path="res://graph.tscn" id="5_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
 size = Vector2(96, 66)
@@ -17,12 +18,15 @@ offset_bottom = 1080.0
 color = Color(0.552956, 0.552956, 0.552956, 1)
 
 [node name="Edge" type="Node2D" parent="."]
+visible = false
 script = ExtResource("3_1bvp3")
 
 [node name="Vertex" parent="." instance=ExtResource("1_ig7tw")]
+visible = false
 position = Vector2(933, 518)
 
 [node name="Vertex2" parent="." instance=ExtResource("1_ig7tw")]
+visible = false
 position = Vector2(742, 516)
 
 [node name="Path2D" parent="." instance=ExtResource("3_h2yge")]
@@ -40,5 +44,7 @@ offset_bottom = 468.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TestArea"]
 position = Vector2(575, 435)
 shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Graph" parent="." instance=ExtResource("5_lquwl")]
 
 [connection signal="mouse_entered" from="TestArea" to="." method="_on_test_area_mouse_entered"]
